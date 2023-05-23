@@ -1,0 +1,33 @@
+{% extends 'opensource/base.html' %}
+
+
+{% block title_block %}
+<h1>All students</h1>
+{% endblock %}
+
+
+{% block main_block %}
+<table border="1">
+    <thead>
+        <tr>
+            <th>fName</th>
+            <th>lName</th>
+            <th>age</th>
+            <th>track</th>
+            <th>graduate</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for st in students %}
+        <tr>
+            <td><a href="/opensource/student/{{st.id}}">{{st.fname}}</a></td>
+            <td>{{st.lname}}</td>
+            <td>{{st.age}}</td>
+            <td>{{st.student_track}}</td>
+            <td>{{st.is_graduated}}</td>
+        </tr>
+
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
